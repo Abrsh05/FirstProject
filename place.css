@@ -1,0 +1,70 @@
+.places {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    display: grid;  /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px;  /* Space between grid items */
+    justify-items: center; /* Center the items inside each grid cell */
+}
+
+.place {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure the .place items use full width of grid cell */
+    text-align: center;
+}
+
+.place img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    max-height: 300px;  /* Limiting max height of images */
+}
+
+.place h3 {
+    color: #0b3d91;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.place p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure responsive design */
+@media (max-width: 768px) {
+    .places {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+
+    .place {
+        padding: 15px;
+    }
+
+    .place img {
+        max-height: 250px;
+    }
+
+    .place h3 {
+        font-size: 1.4rem;
+    }
+
+    .place p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .places {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
