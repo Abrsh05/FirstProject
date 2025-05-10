@@ -2,57 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Places to Visit in Ethiopia - Explore Ethiopia</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="place.css" />
 </head>
 <body>
   <header>
     <h1>Explore Ethiopia</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="place.html">Places</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="place.html">Places</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.php">Contact</a></li>
+    <li><a href="admin_login.php">Admin</a></li>
+    <li><a href="register.php">User</a></li>
+
+  </ul>
+</nav>
   </header>
 
   <section class="places">
-    <h2>Top Places to Visit in Ethiopia</h2>
+    <!-- Lalibela -->
     <div class="place">
-      <img src="lalibela.jpg" alt="Lalibela" />
+      <img src="pic/lalibelaa.jpg" alt="Lalibela Rock-Hewn Churches" />
       <h3>Lalibela</h3>
       <p><strong>Distance from Addis Ababa:</strong> 645 km</p>
       <p><strong>Flight Duration:</strong> 1 hour 15 minutes</p>
       <p><strong>Estimated Flight Cost:</strong> $100 - $150</p>
-      <p>Famous for its rock-hewn churches, Lalibela is one of Ethiopia’s most important historical sites.</p>
+      <p>Famous for its rock-hewn churches, Lalibela is one of Ethiopia’s most iconic historical destinations.</p>
     </div>
-    
+
+    <!-- Sof Omar -->
     <div class="place">
-      <img src="axum.jpg" alt="Axum" />
+      <img src="pic/sofomer.jpg" alt="Sof Omar Caves" />
+      <h3>Sof Omar Caves</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 330 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour</p>
+      <p><strong>Estimated Flight Cost:</strong> $80 - $120</p>
+      <p>Known for stunning limestone formations, Sof Omar Caves are among Africa's most impressive cave systems.</p>
+    </div>
+
+    <!-- Axum -->
+    <div class="place">
+      <img src="pic/aksum.jpg" alt="Axum Obelisks" />
       <h3>Axum</h3>
       <p><strong>Distance from Addis Ababa:</strong> 988 km</p>
       <p><strong>Flight Duration:</strong> 1 hour 45 minutes</p>
       <p><strong>Estimated Flight Cost:</strong> $120 - $180</p>
-      <p>Known for its ancient obelisks and the legendary Queen of Sheba’s palace.</p>
+      <p>Known for its towering obelisks and links to the Queen of Sheba, Axum is steeped in ancient Ethiopian history.</p>
     </div>
 
+    <!-- Simien -->
     <div class="place">
-      <img src="simien.jpg" alt="Simien Mountains" />
+      <img src="pic/simien.jpg" alt="Simien Mountains" />
       <h3>Simien Mountains</h3>
       <p><strong>Distance from Addis Ababa:</strong> 750 km</p>
       <p><strong>Flight Duration:</strong> 1 hour 30 minutes</p>
       <p><strong>Estimated Flight Cost:</strong> $110 - $160</p>
-      <p>A UNESCO World Heritage Site with stunning landscapes and wildlife.</p>
+      <p>Dramatic cliffs and rare wildlife make Simien Mountains a UNESCO World Heritage Site.</p>
     </div>
 
-    <!-- You can add more places here with similar structure -->
-  </section>
+    <!-- Gondar -->
+    <div class="place">
+      <img src="pic/fasiledes.jpg" alt="Fasiledes Castle in Gondar" />
+      <h3>Fasiledes (Gondar)</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 700 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour 10 minutes</p>
+      <p><strong>Estimated Flight Cost:</strong> $100 - $140</p>
+      <p>Gondar is home to castles like Fasilides', reflecting medieval Ethiopian architecture.</p>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Explore Ethiopia. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+    <!-- Bale -->
+    <div class="place">
+      <img src="pic/bale.jpg" alt="Bale Mountains National Park" />
+      <h3>Bale Mountains</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 400 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour</p>
+      <p><strong>Estimated Flight Cost:</strong> $90 - $130</p>
+      <p>Known for alpine meadows, wetlands, and the Ethiopian wolf, Bale is a nature-lover's dream.</p>
+    </div>
+
+    <!-- Blue Nile -->
+    <div class="place">
+      <img src="pic/bluenile.jpg" alt="Blue Nile Falls" />
+      <h3>Blue Nile Falls</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 400 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour</p>
+      <p><strong>Estimated Flight Cost:</strong> $80 - $120</p>
+      <p>One of Ethiopia's most famous waterfalls, especially spectacular during the rainy season.</p>
+    </div>
+
+    <!-- Danakil -->
+    <div class="place">
+      <img src="pic/denikl.jpg" alt="Danakil Depression" />
+      <h3>Danakil Depression</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 600 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour 30 minutes</p>
+      <p><strong>Estimated Flight Cost:</strong> $150 - $200</p>
+      <p>One of the hottest places on Earth, known for surreal volcanic landscapes and salt flats.</p>
+    </div>
+
+    <!-- Harar -->
+    <div class="place">
+      <img src="pic/Harar.jpg" alt="Harar Jugol" />
+      <h3>Harar Jugol</h3>
+      <p><strong>Distance from Addis Ababa:</strong> 525 km</p>
+      <p><strong>Flight Duration:</strong> 1 hour 10 minutes</p>
+      <p><strong>Estimated Flight Cost:</strong> $90 - $130</p>
+      <p>The walled city of Harar, a UNESCO site, is one of Islam’s holiest

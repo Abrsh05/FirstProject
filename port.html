@@ -193,23 +193,58 @@
         .profile-img-container {
             position: relative;
             width: 300px;
-            height: 300px;
+            /* Keep original width */
+            height: 400px;
+            /* Increased height only */
             cursor: pointer;
+            border-radius: 10px;
+            /* Rectangular with slight rounding */
+            overflow: hidden;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--primary-color);
+            /* Ensures image fills container without distortion */
             transition: var(--transition);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .profile-img:hover {
+        .profile-img-container:hover {
             transform: scale(1.05);
         }
+
+        /* Adjust hero-content layout if needed */
+        .hero-content {
+            align-items: flex-start;
+            /* Better alignment with taller image */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .profile-img-container {
+                width: 250px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-img-container {
+                width: 200px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profile-img-container {
+                width: 180px;
+                height: 250px;
+            }
+        }
+
 
         /* Modal for expanded image */
         .modal {
@@ -308,10 +343,66 @@
             border-radius: 5px;
         }
 
+        /* Education Section */
+        #education {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .education-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .education-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 30px;
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .education-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .education-details .institution {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .education-details .duration {
+            color: #64748b;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .education-details p {
+            margin-bottom: 0;
+        }
+
         /* Projects Section */
         #projects {
             padding: 100px 0;
-            background-color: #f8fafc;
+            background-color: white;
         }
 
         .projects-grid {
@@ -398,7 +489,7 @@
         /* Contact Section */
         #contact {
             padding: 100px 0;
-            background-color: white;
+            background-color: #f8fafc;
         }
 
         .contact-content {
@@ -442,6 +533,7 @@
             justify-content: center;
             color: var(--primary-color);
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .contact-text h4 {
@@ -452,13 +544,21 @@
         .contact-text p,
         .contact-text a {
             color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-text a i {
+            font-size: 0.9rem;
         }
 
         .contact-form {
             flex: 1;
-            background-color: #f8fafc;
+            background-color: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -495,7 +595,7 @@
 
         /* Footer Styles */
         footer {
-            background-color: #0f172a;
+            background-color: var(--dark-color);
             color: white;
             padding: 50px 0 20px;
             text-align: center;
@@ -529,52 +629,150 @@
         }
 
         .footer-links a:hover {
-            color: #f59e0b;
+            color: var(--accent-color);
         }
 
+        /* Updated Social Icons Section */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
-        .social-image-container {
-            width: 50px;
-            /* Increased container size */
-            height: 50px;
-            /* Increased container size */
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            /* Thinner border */
+            transition: var(--transition);
         }
 
-        .social-image {
-            width: 30px;
-            /* Increased icon size */
-            height: 30px;
-            /* Increased icon size */
-            object-fit: contain;
-            transition: all 0.3s ease;
+        .social-icon i {
+            font-size: 1.8rem;
+            transition: var(--transition);
         }
 
-        .social-image-container:hover {
-            transform: translateY(-3px);
-            background-color: #2563eb;
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-            border-color: transparent;
-            /* Remove border on hover */
+        /* Only GitHub icon changed to gray */
+        .social-icon .fa-github {
+            color: #9ca3af;
+            /* Medium gray - adjust as needed */
+            /* Alternative gray options:
+       #d1d5db (lighter gray)
+       #6b7280 (darker gray) */
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .social-icon:hover i {
+            transform: scale(1.1);
+            color: white;
+            /* All icons turn white on hover */
         }
 
         .copyright {
             color: #94a3b8;
             font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .hero-text,
+            .about-text,
+            .contact-info,
+            .contact-form {
+                text-align: center;
+            }
+
+            .hero-btns,
+            .project-links,
+            .footer-links {
+                justify-content: center;
+            }
+
+            .contact-info p {
+                max-width: 100%;
+            }
+
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .profile-img-container {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto 30px;
+            }
+
+            .education-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .profile-img-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .education-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -588,6 +786,7 @@
                 <div class="nav-links">
                     <a href="#hero">Home</a>
                     <a href="#about">About</a>
+                    <a href="#education">Education</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -604,7 +803,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hi, I'm <span>Abreham</span></h1>
-                    <h1>Professional Title</h1>
+                    <h1>IT Student & Developer</h1>
                     <p>I'm passionate about creating beautiful, functional, and user-centered digital experiences. With
                         every line of code, I strive to make the web a better place.</p>
                     <div class="hero-btns">
@@ -645,16 +844,14 @@
                         administration.</p>
                     <p>My academic journey has equipped me with both
                         theoretical knowledge and practical skills in software development,
-                        with particular expertise in:.</p>
-                    <p>1.Full-stack web development (PHP, JavaScript, MySQL)<br></p>
-
-                    <p>2.Responsive UI/UX design implementation</p>
-
-                    <p>3. architecture and optimization</p>
-
-                    <p>4.Network infrastructure fundamentals</p>
-
-                    <p>5.Cybersecurity best practices.</p>
+                        with particular expertise in:</p>
+                    <ul style="margin-bottom: 20px;">
+                        <li>Full-stack web development (PHP, JavaScript, MySQL)</li>
+                        <li>Responsive UI/UX design implementation</li>
+                        <li>Database architecture and optimization</li>
+                        <li>Network infrastructure fundamentals</li>
+                        <li>Cybersecurity best practices</li>
+                    </ul>
                     <div class="skills">
                         <div class="skill-item">
                             <div class="skill-name">
@@ -689,6 +886,40 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-content">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-details">
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <div class="institution">Debre Berhan University</div>
+                        <div class="duration">2022 - Present</div>
+                        <p>Currently pursuing my degree with a focus on web development, database systems, and network
+                            security. Active participant in university coding competitions and tech workshops.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-details">
+                        <h3>Web Development Certification</h3>
+                        <div class="institution">Online Platform</div>
+                        <div class="duration">2021 - 2022</div>
+                        <p>Completed comprehensive training in modern web technologies including HTML5, CSS3,
+                            JavaScript,
+                            and PHP with MySQL.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -697,7 +928,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="istockphoto-2140172947-1024x1024.jpg" alt="Project 1">
+                        <img src="istockphoto-2140172947-1024x1024.jpg" alt="E-commerce Website">
                     </div>
                     <div class="project-info">
                         <h3>E-commerce Website</h3>
@@ -718,7 +949,7 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="modern-planning-schedule-concept_23-2147952304.jpg" alt="Project 2">
+                        <img src="modern-planning-schedule-concept_23-2147952304.jpg" alt="Task Management App">
                     </div>
                     <div class="project-info">
                         <h3>Task Management App</h3>
@@ -739,7 +970,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="istockphoto-1237011854-1024x1024.jpg" alt="Project 3">
+                        <img src="istockphoto-1237011854-1024x1024.jpg" alt="Health & Fitness Tracker">
                     </div>
                     <div class="project-info">
                         <h3>Health & Fitness Tracker</h3>
@@ -757,7 +988,7 @@
                     </div>
                 </div>
 
-                <!-- New Project 4: Library Management System -->
+                <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="590x300.png" alt="Library Management System">
@@ -778,16 +1009,15 @@
                     </div>
                 </div>
 
-                <!-- New Project 5: Tourism Project -->
+                <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="360_F_308388341_kzxK7d31ZYO7FmBClxJmYuZZb6dn6a3g.jpg" alt="Tourism Website">
+                        <img src="360_F_308388341_kzxK7d31ZYO7FmBClxJmYuZZb6dn6a3g.jpg" alt="Tourism Portal">
                     </div>
                     <div class="project-info">
                         <h3>Tourism Portal</h3>
                         <p>A tourism website showcasing local attractions with booking functionality, interactive maps,
-                            and
-                            travel guides.</p>
+                            and travel guides.</p>
                         <div class="project-tags">
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Node.js</span>
@@ -802,6 +1032,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -818,7 +1049,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Location</h4>
-                                <p>Debre Berhan, ETHIOPIA</p>
+                                <p><i class="fas fa-city"></i> Debre Berhan, ETHIOPIA</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -827,7 +1058,8 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <a href="mailto:hello@example.com">abrehambe084@gmail.com</a>
+                                <a href="mailto:abrehambe084@gmail.com"><i class="fas fa-at"></i>
+                                    abrehambe084@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -836,7 +1068,17 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
-                                <a href="tel:+1234567890">+251-906041844</a>
+                                <a href="tel:+251906041844"><i class="fas fa-mobile-alt"></i> +251-906041844</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telegram</h4>
+                                <a href="https://t.me/Abrsh162112" target="_blank"><i class="fab fa-telegram-plane"></i>
+                                    @Abrsh162112</a>
                             </div>
                         </div>
                     </div>
@@ -866,33 +1108,34 @@
         </div>
     </section>
 
-    <!-- Footer Section with Both Icon Solutions -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="#" class="footer-logo">Portfolio</a><br><br>
+            <a href="#" class="footer-logo">Abreham</a><br><br>
 
             <div class="footer-links">
                 <a href="#hero">Home</a>
                 <a href="#about">About</a>
+                <a href="#education">Education</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
 
             <div class="social-links">
-                <a href="https://github.com/Abrsh05" target="_blank" title="GitHub" class="social-image-container">
-                    <img src="Github-desktop-logo-symbol.svg.png" alt="GitHub" class="social-image">
+                <a href="https://github.com/Abrsh05" target="_blank" title="GitHub" class="social-icon">
+                    <i class="fab fa-github"></i> <!-- Will be gray from CSS -->
                 </a>
-                <a href="https://www.facebook.com/Abrsh162112" target="_blank" title="Facebook"
-                    class="social-image-container">
-                    <img src="Facebook_Logo_2023.png" alt="Facebook" class="social-image">
+                <a href="https://www.facebook.com/Abrsh162112" target="_blank" title="Facebook" class="social-icon">
+                    <i class="fab fa-facebook" style="color: #1877f2;"></i>
                 </a>
-                <a href="https://twitter.com/AbrehamB5" target="_blank" title="Twitter" class="social-image-container">
-                    <img src="twitter-icon-free-png.webp" alt="Twitter" class="social-image">
+                <a href="https://twitter.com/AbrehamB5" target="_blank" title="Twitter" class="social-icon">
+                    <i class="fab fa-twitter" style="color: #1da1f2;"></i>
                 </a>
-                <a href="https://t.me/Abrsh162112" target="_blank" title="Telegram" class="social-image-container">
-                    <img src="Telegram-icon-on-transparent-background-PNG.png" alt="Telegram" class="social-image">
+                <a href="https://instagram.com/Abrsh162112" target="_blank" title="Instagram" class="social-icon">
+                    <i class="fab fa-instagram" style="color: #e4405f;"></i>
                 </a>
             </div>
+
 
             <p class="copyright">© 2025 Abreham. All rights reserved.</p>
         </div>
